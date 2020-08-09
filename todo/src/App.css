@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* new */
+
+.complete{
+  background-color: red;
+  text-decoration: line-through;
+}
+
+.uncomplete{
+  background-color: #61dafb;
+}

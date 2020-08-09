@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default function Form ({update, submit, value}) {
+export default function Form ({update, submit, value, dispatch}) {
 
     const onChange = (event) => {
         const {value} = event.target
@@ -11,7 +11,11 @@ export default function Form ({update, submit, value}) {
         event.preventDefault()
         submit()
     }
+    const onClick = () => {
+        dispatch({type: 'CLEAR_TODO'})
+    }
 return (
+    <div>
    <form onSubmit={onSubmit}>
        <label htmlFor="text">
            <input
@@ -22,8 +26,10 @@ return (
             onChange={onChange}
             />
        </label>
-       <button>Add</button>
+       <button type="submit">Add</button>
    </form>
+   <button onClick={onClick}>clear completed</button>
+   </div>
 )
 
 }

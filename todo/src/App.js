@@ -24,19 +24,33 @@ const submit = ()=> {
   setFormValue(formIninalValue)
 }
 
+// const clear = () => {
 
+// }
+
+
+
+// console.log(todo.map(data => data.completed))
 
   return (
     <div className="App">
+    <div>
       <Form
         update={update}
         submit={submit}
         value={formValue}
+        dispatch={dispatch}
        />
-       
+       </div>
+
+       <div >
       {todo.map(data => { return <TodoList
+      
                                     key={data.id}
+                                    dispatch={dispatch}
                                     todo={data} />})}
+    </div>
+        
     </div>
   );
 }
